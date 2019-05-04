@@ -5,7 +5,7 @@ public class Formulario extends JFrame
     implements ActionListener{
      private JMenuBar mb;
      private JMenu menu1, menu2;
-     private JMenuItem mi1,mi2,mi3, miAcerca, miFormulario;
+     private JMenuItem mi1, mi2,mi3, miAcerca, miFormulario;
      public Registro r;
      public Formulario() {
              setLayout(null);
@@ -25,7 +25,7 @@ public class Formulario extends JFrame
              mi1=new JMenuItem("Rojo");
              mi1.addActionListener(this);
              menu1.add(mi1);
-             mi2=new JMenuItem("Verde");
+             mi2=new JMenuItem("Rojo");
              mi2.addActionListener(this);
              menu1.add(mi2);
              mi3=new JMenuItem("Azul");
@@ -47,27 +47,28 @@ public class Formulario extends JFrame
         
         public void actionPerformed(ActionEvent e) {
             Container f=this.getContentPane();
-            if (e.getSource()==mi1) {
-                f.setBackground(new Color(255,0,0));
-            }
             if (e.getSource()==mi2) {
                 f.setBackground(new Color(0,255,0));
             }
+            if (e.getSource()==mi1) {
+                f.setBackground(new Color(255,0,0));
+            }
+
             if (e.getSource()==mi3) {
                 f.setBackground(new Color(0,0,255));
             }
             if (e.getSource()==miAcerca) {
                 f.setBackground(new Color(0,0,0));
 
-		Splash s = new Splash();
-		s.titulo.setText(r.texto.getText());
-		
+                Splash s = new Splash();
+                s.titulo.setText(r.texto.getText());
+        
             }
             
             if (e.getSource()==miFormulario) {
                 
-		r = new Registro();
-		r.texto.setText("Datos desde el menu");
+        r = new Registro();
+        r.texto.setText("Datos desde el menu");
             }
         }
 
