@@ -5,7 +5,8 @@ public class Formulario extends JFrame
     implements ActionListener{
      private JMenuBar mb;
      private JMenu menu1, menu2;
-     private JMenuItem mi1,mi2,mi3, miAcerca;
+     private JMenuItem mi1,mi2,mi3, miAcerca, miFormulario;
+     public Registro r;
      public Formulario() {
              setLayout(null);
              this.setBounds(10,20,300,200);
@@ -31,7 +32,10 @@ public class Formulario extends JFrame
              mi3.addActionListener(this);
              menu1.add(mi3); 
              
-             
+             miFormulario=new JMenuItem("Llamar formulario");
+             miFormulario.addActionListener(this);
+             miFormulario.setToolTipText("Llama a un formulario adicional...");
+             menu2.add(miFormulario); 
              miAcerca=new JMenuItem("Acerca de");
              miAcerca.addActionListener(this);
              miAcerca.setToolTipText("Muestra un Dialogo Acerca de...");
@@ -54,9 +58,16 @@ public class Formulario extends JFrame
             }
             if (e.getSource()==miAcerca) {
                 f.setBackground(new Color(0,0,0));
-                //Dialogo d = new Dialogo();
-		//d.show();
+
 		Splash s = new Splash();
+		s.titulo.setText(r.texto.getText());
+		
+            }
+            
+            if (e.getSource()==miFormulario) {
+                
+		r = new Registro();
+		r.texto.setText("Datos desde el menu");
             }
         }
 

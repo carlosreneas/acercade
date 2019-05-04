@@ -5,6 +5,7 @@ import java.awt.event.*;
 public class Splash extends JFrame
     implements ActionListener{
     JButton salir = new JButton("Salir");
+    JLabel titulo;
     public Splash()
     {
         // initialise instance variables
@@ -12,7 +13,7 @@ public class Splash extends JFrame
        setLayout(null);
        this.setBounds(10,20,400,250);
        
-       JLabel titulo = new JLabel("Sabado en clase");
+       titulo = new JLabel("Sabado en clase");
        titulo.setBounds(10,10,300,20);
        this.add(titulo);
        
